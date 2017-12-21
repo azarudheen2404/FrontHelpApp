@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context="in.esquareinfo.web.DashBoard">
+
+    <View
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/spinnerState"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/half"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:layout_margin="@dimen/normal"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined" />
+
+        <Spinner
+            android:id="@+id/spinnerDist"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/half"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:layout_margin="@dimen/normal"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/normal">
+
+            <Spinner
+                android:id="@+id/spinnerYear"
+                android:layout_width="@dimen/divide"
+                android:layout_height="@dimen/half"
+                android:layout_weight="1"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:layout_marginRight="@dimen/normal"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:background="@color/colorBrand"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="@dimen/normal"
+                android:src="@drawable/btn_search"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/desc_search" />
+        </LinearLayout>
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/fullDataLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical"
+                        android:background="@drawable/layout_border">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Application"
+                            android:textColor="#000"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/toatalAppVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical"
+                        android:background="@drawable/layout_border"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Amount Requested"
+                            android:textColor="#000"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:id="@+id/totalAmtReq"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical"
+                        android:background="@drawable/layout_border">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Approved"
+                            android:textColor="#000"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/approved"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical"
+                        android:background="@drawable/layout_border"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Amount Approved"
+                            android:textColor="#000"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:id="@+id/totalAmtApproved"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+
+                        <!--<View
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#D1C4E9">
+
+                        </View>-->
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical"
+                        android:background="@drawable/layout_border">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rejected"
+                            android:textColor="#000"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:id="@+id/rejected"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical"
+                        android:background="@drawable/layout_border"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Amount Paid"
+                            android:textColor="#000"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:id="@+id/totalAmtPaid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:text="New / Renewal Application"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/new_renApp"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="#8D8D8D"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:text="Verification Pending"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/verPending"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="#8D8D8D"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:text="Interview Pending"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/intPending"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="#8D8D8D"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:text="Approval/Rejection Pending"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/app_rejPending"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="#8D8D8D"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:text="Installment1 Paid/Pending"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/ins1"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="#8D8D8D"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:text="Installment2 Paid/Pending"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/ins2"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="#8D8D8D"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/primary_txt"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:background="#d9edf7"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txt_statistics" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/primary_txt"
+                    android:textColor="#5cb85c"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txt_application_by_state" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#f5f5f5"
+                    android:layout_marginTop="10dp">
+
+                    <TableLayout
+                        android:id="@+id/table_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/primary_txt"
+                    android:textColor="#5cb85c"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txt_req_amnt_sate" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="10dp">
+
+                    <TableLayout
+                        android:id="@+id/table_req_amnt_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/primary_txt"
+                    android:textColor="#5cb85c"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txt_number_of_application_per_course" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="10dp">
+
+                    <TableLayout
+                        android:id="@+id/table_no_app"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/primary_txt"
+                    android:textColor="#5cb85c"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txt_number_of_application_paid_per_course" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/colorWhite"
+                    android:layout_marginTop="10dp">
+
+                    <TableLayout
+                        android:id="@+id/table_paid_course"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/primary_txt"
+                    android:textColor="#5cb85c"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txt_application_per_week" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TableLayout
+                        android:id="@+id/table_week"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/primary_txt"
+                    android:textColor="#5cb85c"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/txt_male_vs_female" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="@dimen/divide"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:textSize="@dimen/primary_txt"
+                        android:textColor="@color/colorAccent"
+                        android:id="@+id/totalMale"
+                        android:layout_marginTop="5dp" />
+
+                    <TextView
+                        android:layout_width="@dimen/divide"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:textSize="@dimen/primary_txt"
+                        android:textColor="@color/colorAccent"
+                        android:id="@+id/totalFemale"
+                        android:layout_marginTop="5dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

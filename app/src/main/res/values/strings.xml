@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">FrontHelp</string>
+
+    <string name="desc_bg">Background Image</string>
+    <string name="desc_search">Search Image</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="search_menu_title">Search</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="txt_application_by_state">Application By State</string>
+    <string name="txt_application_per_week">Application Per Week</string>
+    <string name="txt_approval_rejection_pending">Approval/Rejection Pending</string>
+    <string name="txt_approved">Approved</string>
+    <string name="txt_installment1_paid_pending">Installment1 Paid/Pending</string>
+    <string name="txt_installment2_paid_pending">Installment2 Paid/Pending</string>
+    <string name="txt_interview_pending">Interview Pending</string>
+    <string name="txt_male_vs_female">Male Vs Female</string>
+    <string name="txt_new_renewal_application">New / Renewal Application</string>
+    <string name="txt_number_of_application_paid_per_course">Number of Application Paid Per Course</string>
+    <string name="txt_number_of_application_per_course">Number of Application Per Course</string>
+    <string name="txt_rejected">Rejected</string>
+    <string name="txt_req_amnt_sate">Required Amount by State</string>
+    <string name="txt_statistics">Statistics</string>
+    <string name="txt_total_amount_approved">Total Amount Approved</string>
+    <string name="txt_total_amount_paid">Total Amount Paid</string>
+    <string name="txt_total_amount_requested">Total Amount Requested</string>
+    <string name="txt_total_application">Total Applications</string>
+    <string name="txt_verification_pending">Verification Pending</string>
+</resources>

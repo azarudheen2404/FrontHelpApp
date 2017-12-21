@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"/>
+
+    <item android:title="STATISTICS">
+
+        <menu>
+            <item
+                android:id="@+id/nav_byState"
+                android:title="By State" />
+            <item
+                android:id="@+id/nav_byCourse"
+                android:title="By Course" />
+            <item
+                android:id="@+id/nav_byWeek"
+                android:title="By Week" />
+            <item
+                android:id="@+id/nav_byGender"
+                android:title="By Gender" />
+        </menu>
+
+    </item>
+
+   <!-- <item
+        android:id="@+id/nav_scheduleview"
+        android:title="Schedule View"/>
+
+    <item
+        android:id="@+id/nav_Attendanceview"
+        android:title="Attendance View"/>
+
+    <item
+        android:id="@+id/nav_task"
+        android:title="Task Report"/>-->
+
+    <item android:title="VIEW">
+        <menu>
+            <item
+                android:id="@+id/nav_leaveform"
+                android:title="All Applications" />
+            <item
+                android:id="@+id/nav_leaveview"
+                android:title="All Affidavits" />
+        </menu>
+    </item>
+
+    <item android:title="UPDATE APPLICATION">
+        <menu>
+            <item
+                android:id="@+id/nav_ticketprocss"
+                android:title="Update Background Verification" />
+            <item
+                android:id="@+id/nav_ticketview"
+                android:title="Update Interview Status" />
+            <item
+                android:id="@+id/nav_empticketreport"
+                android:title="Approval/Rejection" />
+        </menu>
+    </item>
+
+    <item android:title="FINANCE ADMIN">
+        <menu>
+            <item
+                android:id="@+id/nav_addBank"
+                android:title="Add Bank" />
+            <item
+                android:id="@+id/nav_payment"
+                android:title="Payment" />
+            <item
+                android:id="@+id/nav_rePayment"
+                android:title="Repayment" />
+            <item
+                android:id="@+id/nav_cancelIns"
+                android:title="Cancel Installment" />
+        </menu>
+    </item>
+
+    <item android:title="NATIONAL ADMIN">
+        <menu>
+            <item
+                android:id="@+id/nav_enabDis"
+                android:title="Enable/Disable Scholarship" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Logout"/>
+
+</menu>
