@@ -1,4 +1,4 @@
-package in.esquareinfo.web;
+package in.esquareinfo.web.app;
 
 /**
  * Created by azar on 12-11-2017.

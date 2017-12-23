@@ -3,9 +3,7 @@ package in.esquareinfo.web;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,6 +23,7 @@ import java.util.List;
 
 import in.esquareinfo.web.app.District;
 import in.esquareinfo.web.app.HeaderCertificate;
+import in.esquareinfo.web.app.State;
 
 public class DashBoard extends NavigationActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
