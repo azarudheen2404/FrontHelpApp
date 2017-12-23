@@ -77,7 +77,7 @@ public class Main2Activity extends AppCompatActivity {
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("StDt",response.toString());
                         editor.commit();
-                        Intent dash = new Intent(Main2Activity.this,SearchDetail.class);
+                        Intent dash = new Intent(Main2Activity.this,DashBoard.class);
                         startActivity(dash);
                     }
                 },

@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             if (pref.getString("auth_token",null) != null) {
-                Intent dashBoard = new Intent(this, SearchDetail.class);
+                Intent dashBoard = new Intent(this, DashBoard.class);
                 startActivity(dashBoard);
             } else {
                 String url = "https://schp.popularfrontindia.org/scholarshipQA/guest/login.html?appId=1";

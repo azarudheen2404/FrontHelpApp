@@ -61,12 +61,10 @@ public class DashBoard extends NavigationActivity implements View.OnClickListene
         myHeaderClass.handleSSLHandshake();
         initObjects();
         initCallbacks();
-       /* stdtdetails();
-        initSpinners();*/
+        stdtdetails();
+        initSpinners();
        // this.fulData.setVisibility(8);
 
-
-        dashboardData();
 
     }
 
@@ -104,6 +102,69 @@ public class DashBoard extends NavigationActivity implements View.OnClickListene
         stateSpinner.setOnItemSelectedListener(this);
         districtSpinner.setOnItemSelectedListener(this);
     }
+
+    private void initSpinners() {
+        st.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        stateSpinner.setAdapter(st);
+        dt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        districtSpinner.setAdapter(dt);
+    }
+
+
+    public void stdtdetails() {
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("pfijwt", MODE_PRIVATE);
+        String stdt =pref.getString("StDt",null);
+        JSONObject att = null;
+            try {
+                att = new JSONObject(stdt.toString().trim());
+                String statelist = att.getString("stateList");
+                Log.d("State", statelist.toString().trim());
+                JSONArray state = new JSONArray(statelist.toString());
+                for (int i = 0; i < state.length(); i++) {
+                    JSONObject statedata = state.getJSONObject(i);
+                    stateDet = statedata.getString("name");
+                    methodlist.add(new State(Integer.parseInt(statedata.getString("ID")), stateDet));
+                    st.notifyDataSetChanged();
+                }
+                String distlist = att.getString("districtList");
+                Log.d("District", distlist.toString().trim());
+                JSONArray district = new JSONArray(distlist.toString());
+                for (int j = 0; j < district.length(); j++) {
+                    JSONObject districtdata = district.getJSONObject(j);
+                    districtDet = districtdata.getString("name");
+                    distId = districtdata.getString("ID");
+                    stateIdDis = districtdata.getString("stateID");
+                    districtlist.add(new District(distId, districtDet));
+                    dt.notifyDataSetChanged();
+                }
+                List<String> yearlist = new ArrayList<String>();
+
+                for (int i=2010;i<=2050;i++){
+                    yearlist.add(String.valueOf(i));
+                    ArrayAdapter yr = new ArrayAdapter(DashBoard.this,R.layout.spinner_item,yearlist);
+                    yr.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    //Setting the ArrayAdapter data on the Spinner
+                    spinnerYear.setAdapter(yr);
+                    spinnerYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        public void onItemSelected(
+                                AdapterView<?> adapterView, View view,
+                                int position, long l) {
+                            Log.d("YEAR",adapterView.getItemAtPosition(position).toString());
+                            slctyear = adapterView.getItemAtPosition(position).toString();
+                        }
+                        public void onNothingSelected(
+                                AdapterView<?> adapterView) {
+                        }
+                    });
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+           /* Intent nostation = new Intent(UserSearchBus.this, Selection.class);
+            startActivity(nostation);*/
+            }
+    }
+
 
 
     public void dashboardData(){
@@ -170,12 +231,42 @@ public class DashBoard extends NavigationActivity implements View.OnClickListene
 
     @Override
     public void onClick(View view) {
-
+        dashboardData();
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
 
+        if (adapterView == this.stateSpinner) {
+            stdata = String.valueOf(methodlist.get(stateSpinner.getSelectedItemPosition()).getId());
+            SharedPreferences pref = getApplicationContext().getSharedPreferences("pfijwt", MODE_PRIVATE);
+            String stdt =pref.getString("StDt",null);
+
+                districtlist.clear();
+                JSONObject att = null;
+                try {
+                    att= new JSONObject(stdt.toString().trim());
+                    String distlist = att.getString("districtList");
+                    Log.d("District", distlist.toString().trim());
+                    JSONArray district = new JSONArray(distlist.toString());
+                    for (int i = 0; i < district.length(); i++) {
+                        JSONObject districtdata = district.getJSONObject(i);
+                        String districtDet = districtdata.getString("name");
+                        String distId = districtdata.getString("ID");
+                        String stateIdDis = districtdata.getString("stateID");
+                        if (stateIdDis.equals(this.stdata) || stateIdDis.equals("-1")) {
+                            Log.d("Districttttttt", districtDet);
+                            this.districtlist.add(new District(distId, districtDet));
+                        }
+                        this.dt.notifyDataSetChanged();
+                    }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (adapterView == this.districtSpinner) {
+            disdata = (districtlist.get(districtSpinner.getSelectedItemPosition())).getDisId();
+        }
     }
 
     @Override
