@@ -611,6 +611,7 @@ public class DashBoard extends NavigationActivity implements View.OnClickListene
             }
         } catch (JSONException e) {
             e.printStackTrace();
+            //aar
         }
     }
 
