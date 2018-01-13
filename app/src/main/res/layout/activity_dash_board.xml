@@ -489,7 +489,8 @@
                     <TableLayout
                         android:id="@+id/table_state"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/extra_lite"/>
                 </LinearLayout>
 
                 <TextView
@@ -510,7 +511,8 @@
                     <TableLayout
                         android:id="@+id/table_req_amnt_state"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/extra_lite"/>
                 </LinearLayout>
 
                 <TextView
@@ -531,7 +533,8 @@
                     <TableLayout
                         android:id="@+id/table_no_app"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/extra_lite"/>
                 </LinearLayout>
 
                 <TextView
@@ -552,7 +555,8 @@
                     <TableLayout
                         android:id="@+id/table_paid_course"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/extra_lite"/>
                 </LinearLayout>
 
                 <TextView
@@ -573,7 +577,8 @@
                     <TableLayout
                         android:id="@+id/table_week"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/extra_lite"/>
                 </LinearLayout>
 
                 <TextView
