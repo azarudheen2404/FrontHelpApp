@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewAllApplicationActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spinnerState"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/half"
+            android:layout_margin="10dp"
+            android:gravity="start"
+            android:textColor="#000"
+            android:textColorHint="@color/colorAccent" />
+
+        <Spinner
+            android:id="@+id/spinnerDist"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/half"
+            android:layout_margin="10dp"
+            android:gravity="start"
+            android:textColor="#000"
+            android:textColorHint="@color/colorAccent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinnerYear"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/half"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1.0"
+                android:gravity="start"
+                android:textColor="#000"
+                android:textColorHint="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:adjustViewBounds="true"
+                android:background="#5cb85c"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_search" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/view_all_app_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
